@@ -1,0 +1,2 @@
+rootProject.name = 'JIM-CBVR-Android'
+include ':app'
