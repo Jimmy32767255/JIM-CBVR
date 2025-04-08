@@ -9,7 +9,12 @@ import javax.microedition.khronos.opengles.GL10;
 public class MainActivity extends AppCompatActivity {
     private GLSurfaceView glSurfaceView;
     private NetworkManager networkManager;
-
+    
+    // 加载native库
+    static {
+        System.loadLibrary("jimcbvr-native");
+    }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

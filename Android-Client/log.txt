@@ -1,0 +1,74 @@
+---------------------------- PROCESS STARTED (10154) for package com.jimcbvr.client ----------------------------
+2025-04-08 12:52:46.880 10154-10154 Perf                    com.jimcbvr.client                   I  Connecting to perf service.
+2025-04-08 12:52:46.908 10154-10154 FeatureParser           com.jimcbvr.client                   I  can't find dipper.xml in assets/device_features/,it may be in /system/etc/device_features
+2025-04-08 12:52:46.922 10154-10154 libc                    com.jimcbvr.client                   E  Access denied finding property "ro.vendor.df.effect.conflict"
+2025-04-08 12:52:46.929 10154-10193 Perf                    com.jimcbvr.client                   E  Fail to get file list com.jimcbvr.client
+2025-04-08 12:52:46.929 10154-10193 Perf                    com.jimcbvr.client                   E  getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+2025-04-08 12:52:46.929 10154-10193 Perf                    com.jimcbvr.client                   E  Fail to get file list com.jimcbvr.client
+2025-04-08 12:52:46.929 10154-10193 Perf                    com.jimcbvr.client                   E  getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+2025-04-08 12:52:46.930 10154-10193 Perf                    com.jimcbvr.client                   E  Fail to get file list oat
+2025-04-08 12:52:46.930 10154-10193 Perf                    com.jimcbvr.client                   E  getFolderSize() : Exception_1 = java.lang.NullPointerException: Attempt to get length of null array
+2025-04-08 12:52:46.939 10154-10154 linker                  com.jimcbvr.client                   W  Warning: "/data/app/com.jimcbvr.client-DjpmydqxWylY10hNxP18JQ==/base.apk!/lib/arm64-v8a/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+2025-04-08 12:52:46.950 10154-10154 AppCompatDelegate       com.jimcbvr.client                   D  Checking for metadata for AppLocalesMetadataHolderService : Service not found
+2025-04-08 12:52:46.970 10154-10154 ForceDarkHelper         com.jimcbvr.client                   D  updateByCheckExcludeList: pkg: com.jimcbvr.client activity: com.jimcbvr.client.MainActivity@10ee422
+2025-04-08 12:52:46.972 10154-10154 .jimcbvr.clien          com.jimcbvr.client                   E  Invalid ID 0x00000000.
+2025-04-08 12:52:46.988 10154-10154 ForceDarkHelper         com.jimcbvr.client                   D  updateByCheckExcludeList: pkg: com.jimcbvr.client activity: com.jimcbvr.client.MainActivity@10ee422
+2025-04-08 12:52:47.001 10154-10154 chatty                  com.jimcbvr.client                   I  uid=10501(com.jimcbvr.client) identical 3 lines
+2025-04-08 12:52:47.002 10154-10154 ForceDarkHelper         com.jimcbvr.client                   D  updateByCheckExcludeList: pkg: com.jimcbvr.client activity: com.jimcbvr.client.MainActivity@10ee422
+2025-04-08 12:52:47.005 10154-10154 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+2025-04-08 12:52:47.016 10154-10199 System.err              com.jimcbvr.client                   W  SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+2025-04-08 12:52:47.016 10154-10199 System.err              com.jimcbvr.client                   W  SLF4J: Defaulting to no-operation (NOP) logger implementation
+2025-04-08 12:52:47.016 10154-10199 System.err              com.jimcbvr.client                   W  SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+2025-04-08 12:52:47.021 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/Token;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V (greylist, linking, allowed)
+2025-04-08 12:52:47.022 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/InterceptorProxy;->getWorkThread()Landroid/os/HandlerThread; (greylist, linking, allowed)
+2025-04-08 12:52:47.022 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  initViewContentFetcherClass
+2025-04-08 12:52:47.022 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  getInterceptorPackageInfo
+2025-04-08 12:52:47.022 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Landroid/app/AppGlobals;->getInitialApplication()Landroid/app/Application; (greylist, linking, allowed)
+2025-04-08 12:52:47.023 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  getInitialApplication took 0ms
+2025-04-08 12:52:47.023 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  packageInfo.packageName: com.miui.catcherpatch
+2025-04-08 12:52:47.035 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  initViewContentFetcherClass took 13ms
+2025-04-08 12:52:47.035 10154-10197 ContentCatcher          com.jimcbvr.client                   I  ViewContentFetcher : ViewContentFetcher
+2025-04-08 12:52:47.035 10154-10197 ViewContentFactory      com.jimcbvr.client                   D  createInterceptor took 14ms
+2025-04-08 12:52:47.036 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/ContentCatcherManager;->getInstance()Lmiui/contentcatcher/sdk/ContentCatcherManager; (greylist, linking, allowed)
+2025-04-08 12:52:47.036 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/ContentCatcherManager;->registerContentInjector(Lmiui/contentcatcher/sdk/Token;Lmiui/contentcatcher/sdk/injector/IContentDecorateCallback;)V (greylist, linking, allowed)
+2025-04-08 12:52:47.038 10154-10154 Looper                  com.jimcbvr.client                   W  Slow Looper main: Activity com.jimcbvr.client/.MainActivity is 338ms late (wall=0ms running=0ms ClientTransaction{ callbacks=[android.app.servertransaction.TopResumedActivityChangeItem] }) because of 3 msg, msg 2 took 223ms (seq=2 running=167ms runnable=30ms io=3ms late=7ms h=android.app.ActivityThread$H w=110), msg 3 took 113ms (seq=3 running=86ms runnable=4ms io=4ms late=225ms h=android.app.ActivityThread$H w=159)
+2025-04-08 12:52:47.039 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/ContentCatcherManager;->getPageConfig(Lmiui/contentcatcher/sdk/Token;)Lmiui/contentcatcher/sdk/data/PageConfig; (greylist, linking, allowed)
+2025-04-08 12:52:47.041 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/data/PageConfig;->getFeatures()Ljava/util/ArrayList; (greylist, linking, allowed)
+2025-04-08 12:52:47.041 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/data/PageConfig;->getCatchers()Ljava/util/ArrayList; (greylist, linking, allowed)
+2025-04-08 12:52:47.041 10154-10197 ContentCatcher          com.jimcbvr.client                   I  Interceptor : Catcher list invalid for com.jimcbvr.client@com.jimcbvr.client.MainActivity@17753122
+2025-04-08 12:52:47.041 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden field Lmiui/contentcatcher/sdk/data/FeatureInfo;->name:Ljava/lang/String; (greylist, linking, allowed)
+2025-04-08 12:52:47.041 10154-10197 ContentCatcher          com.jimcbvr.client                   I  Interceptor : Get featureInfo from config image_pick_mode
+2025-04-08 12:52:47.041 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden field Lmiui/contentcatcher/sdk/data/FeatureInfo;->enable:Z (greylist, linking, allowed)
+2025-04-08 12:52:47.042 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/data/FeatureInfo;->getCatcherNameList()Ljava/util/List; (greylist, linking, allowed)
+2025-04-08 12:52:47.043 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden field Lmiui/contentcatcher/sdk/data/FeatureInfo;->target:Ljava/lang/String; (greylist, linking, allowed)
+2025-04-08 12:52:47.043 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden field Lmiui/contentcatcher/sdk/data/FeatureInfo;->jobTag:Ljava/lang/String; (greylist, linking, allowed)
+2025-04-08 12:52:47.043 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden field Lmiui/contentcatcher/sdk/data/FeatureInfo;->mParams:Ljava/util/HashMap; (greylist, linking, allowed)
+2025-04-08 12:52:47.044 10154-10197 ContentCatcher          com.jimcbvr.client                   I  Interceptor : Get featureInfo from config pick_mode
+2025-04-08 12:52:47.044 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lcom/miui/internal/viewcontentfetcher/IViewContentFetcher;->createFetcher(Lmiui/contentcatcher/sdk/Token;Ljava/util/Map;)V (greylist, linking, allowed)
+2025-04-08 12:52:47.044 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/Token;->getPkgName()Ljava/lang/String; (greylist, linking, allowed)
+2025-04-08 12:52:47.045 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/Token;->getVersionCode()I (greylist, linking, allowed)
+2025-04-08 12:52:47.045 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/WebViewDetector;->getInstance()Lmiui/contentcatcher/sdk/WebViewDetector; (greylist, linking, allowed)
+2025-04-08 12:52:47.045 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/WebViewDetector;-><init>()V (greylist, linking, allowed)
+2025-04-08 12:52:47.045 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/WebViewDetector;->setCustomDetector(Lmiui/contentcatcher/sdk/WebViewDetector;)V (greylist, linking, allowed)
+2025-04-08 12:52:47.045 10154-10197 .jimcbvr.clien          com.jimcbvr.client                   W  Accessing hidden method Lmiui/contentcatcher/sdk/WebViewDetector;->setActiveCallback(Lmiui/contentcatcher/sdk/WebViewDetector$Callback;)V (greylist, linking, allowed)
+2025-04-08 12:52:47.054 10154-10194 AdrenoGLES              com.jimcbvr.client                   I  QUALCOMM build                   : e541a88, I20154638fb
+                                                                                                    Build Date                       : 09/15/20
+                                                                                                    OpenGL ES Shader Compiler Version: EV031.27.05.01
+                                                                                                    Local Branch                     : 
+                                                                                                    Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.8.3.R1.10.00.00.520.058
+                                                                                                    Remote Branch                    : NONE
+                                                                                                    Reconstruct Branch               : NOTHING
+2025-04-08 12:52:47.054 10154-10194 AdrenoGLES              com.jimcbvr.client                   I  Build Config                     : S P 8.0.11 AArch64
+2025-04-08 12:52:47.058 10154-10154 SurfaceView             com.jimcbvr.client                   D  UPDATE null, mIsCastMode = false
+2025-04-08 12:52:47.065 10154-10194 AdrenoGLES              com.jimcbvr.client                   I  PFP: 0x016ee187, ME: 0x00000000
+2025-04-08 12:52:47.068 10154-10194 AdrenoUtils             com.jimcbvr.client                   W  <ReadGpuID_from_sysfs:194>: Failed to open /sys/class/kgsl/kgsl-3d0/gpu_model
+2025-04-08 12:52:47.068 10154-10194 AdrenoUtils             com.jimcbvr.client                   W  <ReadGpuID:218>: Failed to read chip ID from gpu_model. Fallback to use the GSL path
+2025-04-08 12:52:47.085 10154-10198 JimCBVR-Native          com.jimcbvr.client                   I  initShader called with k1=0.250000, k2=0.050000
+2025-04-08 12:52:47.089 10154-10198 Gralloc3                com.jimcbvr.client                   W  mapper 3.x is not supported
+2025-04-08 12:52:52.269 10154-10212 ProfileInstaller        com.jimcbvr.client                   D  Installing profile for com.jimcbvr.client
+2025-04-08 12:53:03.001 10154-10154 ViewRootImpl            com.jimcbvr.client                   D  [TouchInput][ViewRootImpl] KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=648114719, downTime=648114719, deviceId=-1, source=0x101, displayId=-1 }
+2025-04-08 12:53:03.304 10154-10154 ViewRootImpl            com.jimcbvr.client                   D  [TouchInput][ViewRootImpl] KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0xc8, repeatCount=1, eventTime=648115023, downTime=648114719, deviceId=-1, source=0x101, displayId=-1 }
+2025-04-08 12:53:03.616 10154-10154 ViewRootImpl            com.jimcbvr.client                   D  [TouchInput][ViewRootImpl] KeyEvent { action=ACTION_UP, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x68, repeatCount=0, eventTime=648115336, downTime=648114719, deviceId=-1, source=0x101, displayId=-1 }
+2025-04-08 12:53:04.524 10154-10154 ViewRootImpl            com.jimcbvr.client                   D  [TouchInput][ViewRootImpl] KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0x48, repeatCount=0, eventTime=648116236, downTime=648116236, deviceId=-1, source=0x101, displayId=-1 }
+2025-04-08 12:53:04.831 10154-10154 ViewRootImpl            com.jimcbvr.client                   D  [TouchInput][ViewRootImpl] KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_BACK, scanCode=0, metaState=0, flags=0xc8, repeatCount=1, eventTime=648116548, downTime=648116236, deviceId=-1, source=0x101, displayId=-1 }
+---------------------------- PROCESS ENDED (10154) for package com.jimcbvr.client ----------------------------
