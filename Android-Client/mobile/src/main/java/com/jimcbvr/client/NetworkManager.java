@@ -5,7 +5,10 @@ import android.util.Log;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 网络连接管理器，支持WiFi/USB双通道自动切换
@@ -14,11 +17,9 @@ public class NetworkManager {
     private static final String TAG = "NetworkManager";
 
     private WebSocketClient wsClient;
-    private final Context context;
-    private NetworkCallback callback;
+    private final NetworkCallback callback;
 
     public NetworkManager(Context context, NetworkCallback callback) {
-        this.context = context;
         this.callback = callback;
     }
 
@@ -51,6 +52,19 @@ public class NetworkManager {
     private void attemptWifiMode(int port) {
         // 实现无线网络发现逻辑
         // （此处需添加SSDP/UDP广播发现服务端IP的逻辑）
+        Log.d(TAG, "尝试无线连接模式，端口：" + port);
+        
+        // 简单实现：尝试连接本地网络中可能的服务器IP
+        // 在实际应用中，应该使用网络发现协议如SSDP或mDNS
+        try {
+            // 这里假设服务器在同一网络的192.168.1.x子网中
+            // 实际应用中应该动态发现服务器IP
+            URI wifiUri = new URI("ws://192.168.1.100:" + port);
+            setupWebSocket(wifiUri);
+        } catch (URISyntaxException e) {
+            Log.e(TAG, "无线连接URI创建失败", e);
+            callback.onError("无线连接配置错误");
+        }
     }
 
     private void setupWebSocket(URI uri) {
@@ -64,6 +78,7 @@ public class NetworkManager {
             @Override
             public void onMessage(String message) {
                 // 处理文本协议消息
+                Log.d(TAG, "收到文本消息: " + message);
             }
 
             @Override
@@ -91,16 +106,37 @@ public class NetworkManager {
     }
 
     private void startHeartbeat() {
-        new Thread(() -> {
-            while (wsClient.isOpen()) {
+        final AtomicBoolean running = new AtomicBoolean(true);
+        Thread heartbeatThread = new Thread(() -> {
+            while (running.get() && wsClient != null && wsClient.isOpen()) {
                 try {
-                    Thread.sleep(3000);
-                    wsClient.sendPing();
+                    TimeUnit.SECONDS.sleep(3); // 使用TimeUnit代替直接调用Thread.sleep
+                    if (wsClient != null && wsClient.isOpen()) {
+                        wsClient.sendPing();
+                    }
                 } catch (InterruptedException e) {
+                    Log.d(TAG, "心跳线程被中断");
+                    running.set(false);
                     break;
                 }
             }
-        }).start();
+            Log.d(TAG, "心跳线程结束");
+        });
+        heartbeatThread.setDaemon(true); // 设置为守护线程，不阻止JVM退出
+        heartbeatThread.start();
+    }
+
+    /**
+     * 关闭网络连接
+     */
+    public void closeConnection() {
+        if (wsClient != null) {
+            try {
+                wsClient.close();
+            } catch (Exception e) {
+                Log.e(TAG, "关闭WebSocket连接失败", e);
+            }
+        }
     }
 
     public interface NetworkCallback {

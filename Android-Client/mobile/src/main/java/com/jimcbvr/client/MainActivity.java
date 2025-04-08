@@ -3,9 +3,12 @@ package com.jimcbvr.client;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import javax.microedition.khronos.egl.EGLConfig;
+import javax.microedition.khronos.opengles.GL10;
 
 public class MainActivity extends AppCompatActivity {
     private GLSurfaceView glSurfaceView;
+    private NetworkManager networkManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +20,17 @@ public class MainActivity extends AppCompatActivity {
     private void initGLSurfaceView() {
         glSurfaceView = new GLSurfaceView(this);
         glSurfaceView.setEGLContextClientVersion(3);
-        glSurfaceView.setRenderer(new GLRenderer());
+        GLRenderer renderer = new GLRenderer();
+        glSurfaceView.setRenderer(renderer);
+        // 保存渲染器实例以便后续访问
+        glSurfaceView.setTag(renderer);
         setContentView(glSurfaceView);
     }
 
     private void setupNetworkConnection() {
         // 双通道连接初始化逻辑
-        new Thread(() -> {
-            // 网络连接实现
-        }).start();
+        networkManager = new NetworkManager(this, networkCallback);
+        networkManager.startConnection(6144); // 默认端口，可根据实际需求调整
     }
 
     private static class GLRenderer implements GLSurfaceView.Renderer {
@@ -47,26 +52,54 @@ public class MainActivity extends AppCompatActivity {
 
         private native void initShader(float k1, float k2);
         private native void updateShaderParams(float k1, float k2);
+        
         @Override
-        public void onSurfaceChanged(javax.microedition.khronos.opengles.GL10 gl, int width, int height) {
+        public void onSurfaceChanged(GL10 gl, int width, int height) {
             // 画面尺寸变化处理
         }
 
         @Override
-        public void onDrawFrame(javax.microedition.khronos.opengles.GL10 gl) {
+        public void onDrawFrame(GL10 gl) {
             // 每帧渲染逻辑
         }
     }
 
     // 在MainActivity中添加参数更新回调
-    private NetworkManager.NetworkCallback networkCallback = new NetworkManager.NetworkCallback() {
+    private final NetworkManager.NetworkCallback networkCallback = new NetworkManager.NetworkCallback() {
+        @Override
+        public void onConnected() {
+            // 连接成功处理
+        }
+
+        @Override
+        public void onDisconnected(String reason) {
+            // 连接断开处理
+        }
+
+        @Override
+        public void onError(String message) {
+            // 错误处理
+        }
+        
         @Override
         public void onFrameReceived(byte[] frameData) {
             // 解析视频帧中的矫正参数（需要与服务端协议保持一致）
             float[] params = parseDistortionParams(frameData);
             glSurfaceView.queueEvent(() -> {
-                ((GLRenderer)glSurfaceView.getRenderer()).updateDistortionParams(params[0], params[1]);
+                // 修复：不能直接通过getRenderer获取渲染器
+                // 使用在initGLSurfaceView中设置的渲染器实例
+                GLRenderer renderer = (GLRenderer) glSurfaceView.getTag();
+                if (renderer != null) {
+                    renderer.updateDistortionParams(params[0], params[1]);
+                }
             });
         }
     };
+    
+    // 解析视频帧中的畸变校正参数
+    private float[] parseDistortionParams(byte[] frameData) {
+        // 实际项目中需要根据协议解析帧数据中的参数
+        // 这里简单返回默认值作为示例
+        return new float[]{0.25f, 0.05f};
+    }
 }
