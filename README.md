@@ -1,4 +1,4 @@
-# JIM-CBVR
+0# JIM-CBVR
 
 ## 一个自由，开放的VR串流解决方案
 
@@ -20,6 +20,10 @@
 ## 为什么创建它？
 
 ### 因为RiftCat VRidge收费，Trinus VR又不好用，而且不美观，所以我决定自己做一个！
+
+## 现在能用吗？
+
+### 很遗憾，不！它正在制作中，可用时，我们将会发布releases。
 
 ## 环境要求
 
@@ -121,29 +125,3 @@
 4. **进入VR模式**
    - 连接成功后，将手机放入VR眼镜
    - 开始体验VR内容
-
-## 常见问题解答
-
-1. **连接失败怎么办？**
-   - 检查网络连接是否正常
-   - 确认服务端IP地址是否正确
-   - 检查防火墙是否阻止了连接
-
-2. **画面延迟严重？**
-   - WiFi模式下，尝试使用5GHz WiFi网络
-   - 尝试使用USB连接模式获得更低延迟
-   - 降低分辨率设置
-
-3. **画面畸变？**
-   - 在服务端调整畸变矫正参数
-   - 确保手机正确放置在VR眼镜中
-
-## 贡献指南
-
-欢迎提交Pull Request或Issue来帮助改进项目！
-
-1. Fork本仓库
-2. 创建您的特性分支 (`git checkout -b feature/amazing-feature`)
-3. 提交您的更改 (`git commit -m 'Add some amazing feature'`)
-4. 推送到分支 (`git push origin feature/amazing-feature`)
-5. 打开一个Pull Request
